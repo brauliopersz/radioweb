@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Radio</title>
+    <style>
+        #radio-container {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="radio-container">
+        <h1>Reproductor de Radio</h1>
+        <audio id="radio-player" controls>
+            <source src="https://radiolatina88fm.radio12345.com" type="audio/mp3">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
+
+    <script>
+        const radioPlayer = document.getElementById('radio-player');
+
+        // Event listener para mostrar información cuando comienza a reproducir
+        radioPlayer.addEventListener('playing', () => {
+            console.log('Reproduciendo: ' + radioPlayer.src);
+        });
+
+        // Event listener para mostrar información cuando se pausa
+        radioPlayer.addEventListener('pause', () => {
+            console.log('Pausado: ' + radioPlayer.src);
+        });
+
+        // Event listener para mostrar información cuando hay un error
+        radioPlayer.addEventListener('error', (error) => {
+            console.error('Error al reproducir: ', error);
+        });
+    </script>
+
+</body>
+</html>
